@@ -15,4 +15,10 @@ export const Container = styled.div`
     text-align: center;
     font-weight: 600;
   }
+
+  lista {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 12px;
+  }
 `;

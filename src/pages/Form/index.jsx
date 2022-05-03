@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Header from "../../components/Header";
 import { Container } from './style';
-import axios from 'axios'
+import api from '../../services/api';
 
-const url = "http://localhost:5000"
+
 
 const Form = () => {
 
@@ -19,34 +19,28 @@ const Form = () => {
   // const [title, setTitle] = useState('')
   //<input onChange={event => setTitle(event.target.value)} />
 
-  const [count, setCount] = useState(0);
 
   const [data, setData] = useState(newData);
-  const [print, setPrint] = useState(false);
 
 
   function getData(name) {
     setData(name.target.value)
-    setPrint(false)
-    // console.warn(name.target.value)
     console.log(name.target.value)
   }
 
-  function handleChange(e) {
-    const { name, value } = e.target;
+  function handleChange(event) {
+    const { name, value } = event.target;
     setData({ ...data, [name]: value })
-    console.log(e.target.value)
+    console.log(event.target.value)
   }
 
-  function handleSubmit(e) {
-    e.preventDefault()
-    axios.post(`${url}/food/create`, data).then(function (response) { 
+  function handleSubmit(event) {
+    event.preventDefault()
+    api.post("/food/create", data).then(function (response) { 
       setData(response.data)
     })
       .catch(function (error) {
         console.log(error); // Network Error
-        console.log(error.status); // undefined
-        console.log(error.code); // undefined
       });
   }
 
@@ -79,11 +73,6 @@ const Form = () => {
           <input type="submit" value="Cadastrar"></input>
 
         </form>
-
-        <p>Você clicou {count / 2} vezes</p>
-        <button onClick={() => setCount(count + 2)}>
-          Clique aqui
-        </button>
       </Container>
     </>
   );
