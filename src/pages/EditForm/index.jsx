@@ -36,14 +36,12 @@ const Form = () => {
 
   function handleSubmit(event) {
     event.preventDefault()
-    api.post("/food/create", data).then(function (response) { 
+    api.post("/food/update", data).then(function (response) { 
       setData(response.data)
     })
       .catch(function (error) {
         console.log(error); // Network Error
       });
-    
-    alert("Ração cadastrada com sucesso");
   }
 
 
@@ -52,7 +50,7 @@ const Form = () => {
 
       <Container>
         <Header />
-        <h2>Cadastrar ração</h2>
+        <h2>Editar ração</h2>
         <form onSubmit={handleSubmit}>
           <label>
             Marca da ração:
@@ -72,7 +70,7 @@ const Form = () => {
           </label>
 
           {/* button */}
-          <input type="submit" value="Cadastrar"></input>
+          <input type="submit" value="Editar"></input>
 
         </form>
       </Container>

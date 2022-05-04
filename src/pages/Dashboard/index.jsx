@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import { Container } from "./style";
 import Card from '../../components/Cards';
@@ -10,7 +11,8 @@ const Dashboard = () => {
     <Container>
       <Header />
       <h2>Lista de rações</h2>
-      <lista>
+      <Link class="buttonAdd" to="/cadastrar">Cadastrar ração</Link>
+      <lista> 
         <Card />
       </lista>
     </Container>

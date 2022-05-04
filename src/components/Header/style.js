@@ -8,6 +8,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   display: flex;
+//ver da posição do título "Zeus" mudando entre tela home e cadastrar
 
   h1 {
     color: whitesmoke;
