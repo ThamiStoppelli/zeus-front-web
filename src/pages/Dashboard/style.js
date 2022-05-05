@@ -27,12 +27,22 @@ export const Container = styled.div`
     font-weight: bold;
     //margin-left: auto;
     text-decoration: none;
+    //border: none;
+  }
+
+  .buttonAdd:hover {
+    cursor: pointer;
   }
 
   lista {
     display: flex;
     flex-direction: column-reverse;
     gap: 12px;
+  }
+
+  div {
+    display: flex;
+    flex-direction: row;
   }
 
 `;

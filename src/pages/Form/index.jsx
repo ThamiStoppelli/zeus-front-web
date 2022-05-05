@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from "../../components/Header";
 import { Container } from './style';
 import api from '../../services/api';
-
+import { Navigate, useNavigate } from 'react-router-dom';
 
 
 const Form = () => {
@@ -18,32 +18,46 @@ const Form = () => {
 
   // const [title, setTitle] = useState('')
   //<input onChange={event => setTitle(event.target.value)} />
-
+  
 
   const [data, setData] = useState(newData);
+  const [formTitle, setFormTitle] = useState("Cadastrar ração")
+  const navigate = useNavigate()
 
+  // useEffect(() => {
+  //   if (id !== undefined) {
+  //     setFormTitle("Editar ração");
+      //mudar botão
+      //mudar feedback
+//     }
+// }, [])
+
+//colocar os dados nos campos dos inputs
 
   function getData(name) {
     setData(name.target.value)
     console.log(name.target.value)
   }
 
-  function handleChange(event) {
-    const { name, value } = event.target;
+  function handleChange(field) {
+    const { name, value } = field.target;
     setData({ ...data, [name]: value })
-    console.log(event.target.value)
+    console.log(field.target.value)
   }
 
-  function handleSubmit(event) {
-    event.preventDefault()
+  function handleSubmit(field) {
+    field.preventDefault()
     api.post("/food/create", data).then(function (response) { 
+      
       setData(response.data)
+      navigate('/')
+      alert("Ração cadastrada com sucesso");
+
     })
       .catch(function (error) {
+        alert("Preencha os campos obrigatórios para cadastrar");
         console.log(error); // Network Error
       });
-    
-    alert("Ração cadastrada com sucesso");
   }
 
 
@@ -52,8 +66,8 @@ const Form = () => {
 
       <Container>
         <Header />
-        <h2>Cadastrar ração</h2>
-        <form onSubmit={handleSubmit}>
+        <h2>{ formTitle }</h2>
+        <form onSubmit={handleSubmit} >
           <label>
             Marca da ração:
             <input type="text" name="name" value={data.name} placeholder='Nome da marca' onChange={handleChange} />

@@ -5,7 +5,7 @@ export const Container = styled.div`
   flex-direction:row;
   border: 1px solid black;
   width: 50vw;
-  height: 100px;
+  height: 120px;
   background-color: #cfcdc8;
   border-radius: 8px;
   /* gap: 50px; */
@@ -35,7 +35,6 @@ export const Container = styled.div`
     width: 43vw;
     margin-left: 1vw;
     margin-top: 0.3vw;
-
   }
 
 `;
