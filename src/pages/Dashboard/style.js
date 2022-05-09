@@ -17,7 +17,7 @@ export const Container = styled.div`
   }
 
   .buttonAdd {
-    background-color: #4CAFaa;
+    background-color: tomato;
     border-radius: 8px;
     color: white;
     padding: 15px 32px;

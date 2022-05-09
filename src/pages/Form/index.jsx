@@ -16,14 +16,11 @@ const Form = () => {
     }
   }
 
-  // const [title, setTitle] = useState('')
-  //<input onChange={event => setTitle(event.target.value)} />
-  
-
   const [data, setData] = useState(newData);
   const [formTitle, setFormTitle] = useState("Cadastrar ração")
   const navigate = useNavigate()
 
+//colocar os dados nos campos dos inputs
   // useEffect(() => {
   //   if (id !== undefined) {
   //     setFormTitle("Editar ração");
@@ -32,12 +29,13 @@ const Form = () => {
 //     }
 // }, [])
 
-//colocar os dados nos campos dos inputs
+//verificacao
+  // function getData(name) {
+  //   setData(name.target.value)
+  //   console.log(name.target.value)
+  // }
+//<input onChange={event => setTitle(event.target.value)} />
 
-  function getData(name) {
-    setData(name.target.value)
-    console.log(name.target.value)
-  }
 
   function handleChange(field) {
     const { name, value } = field.target;
@@ -52,7 +50,6 @@ const Form = () => {
       setData(response.data)
       navigate('/')
       alert("Ração cadastrada com sucesso");
-
     })
       .catch(function (error) {
         alert("Preencha os campos obrigatórios para cadastrar");
@@ -60,10 +57,8 @@ const Form = () => {
       });
   }
 
-
   return (
     <>
-
       <Container>
         <Header />
         <h2>{ formTitle }</h2>
@@ -85,10 +80,11 @@ const Form = () => {
             <input type="text" name="description" value={data.description} placeholder='' onChange={handleChange} />
           </label>
 
-          {/* button */}
-          <input type="submit" value="Cadastrar"></input>
+          <button type="submit" value="Cadastrar">Cadastrar</button>
 
         </form>
+        <button>Voltar</button> 
+        {/* botao voltar para a pagina principal */}
       </Container>
     </>
   );
