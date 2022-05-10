@@ -47,14 +47,13 @@ const Card = ({ name, price, amount, description, timestamps }) => {
         //     alert("Post excluído com sucesso");
         // } catch (error) {
         //     console.log(error);
-        //     alert("Não foi excluir o post.")
+        //     alert("Não foi possível excluir o post.")
         // }
 
         //melhorar/estilizar os alertas/pop-ups
     
     {
         return (
-            //não tem key, usar se der ruim key={}
             //map vai renderizar um container pra cada item no Array data
             data.map((data, key) => (
                 <Container key={key}>
