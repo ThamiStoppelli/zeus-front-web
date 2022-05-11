@@ -21,16 +21,27 @@ const Card = ({ name, price, amount, description, timestamps }) => {
     }
 
     // Função para editar um post específico
-    async function edit(name, price, amoint, description) {
-        const response = api + "/food/update" + loadData()
-        return axios.put(response, data)
+    // async function edit (name, price, amoint, description) {
+    //     const response = api + "/food/update" + loadData()
+    //     return axios.put(response, data)
+    // }
+
+    function editData(id) {
+        try {
+            api.put(`update/${id}`, data).then(() => this.setState({ status: 'Sucessfully updated' }));
+            loadData();
+            alert("Compra atualizada com sucesso.");
+            // return axios.put(response, dados)
+        } catch (err) {
+            alert("Erro, tente novamente.");
+        }
     }
 
     //async function updateData(id){
-        //api.put(`/food/update/${id}`)},
+    //api.put(`/food/update/${id}`)},
 
-//informar o que vai ser atualizado (nome, preço...)
-//direcionar para pagina form com as informações já constando nos campos de texto//
+    //informar o que vai ser atualizado (nome, preço...)
+    //direcionar para pagina form com as informações já constando nos campos de texto//
 
     function deleteData(id) {
 
@@ -40,13 +51,11 @@ const Card = ({ name, price, amount, description, timestamps }) => {
 
         window.location.reload(true);
     }
+    //melhorar/estilizar os alertas/pop-ups
 
-
-//melhorar/estilizar os alertas/pop-ups
-    
     {
         return (
- //map vai renderizar um container pra cada item no Array data
+            //map vai renderizar um container pra cada item no Array data
             data.map((data, key) => (
                 <Container key={key}>
                     <info>
@@ -54,11 +63,11 @@ const Card = ({ name, price, amount, description, timestamps }) => {
                         <h3>Preço: R$ {data.price} </h3>
                         <h3>Quantidade: {data.amount} kg</h3 >
                         <h3>Descrição: {data.description} </h3>
-                        <h3>Data: { moment(data.updatedAt).format('DD/MM/YYYY')} </h3>
+                        <h3>Data: {moment(data.updatedAt).format('DD/MM/YYYY')} </h3>
                     </info>
                     <icons>
                         <div class="button">
-                            <PencilSimple size={32} />
+                            <PencilSimple size={32} onClick={() => editData(data._id)} />
                             {/* onClick={() => updateDate(data._id)} */}
                         </div>
                         <div class="button">
