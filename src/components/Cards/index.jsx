@@ -27,10 +27,10 @@ const Card = ({ name, price, amount, description, timestamps }) => {
     }
 
     //async function updateData(id){
-    //api.put(`/food/update/${id}`)
-    //informar o que vai ser atualizado (nome, preço...)
-    //direcionar para pagina form com as informações já constando nos campos de texto
-    //},
+        //api.put(`/food/update/${id}`)},
+
+//informar o que vai ser atualizado (nome, preço...)
+//direcionar para pagina form com as informações já constando nos campos de texto//
 
     function deleteData(id) {
 
@@ -40,21 +40,13 @@ const Card = ({ name, price, amount, description, timestamps }) => {
 
         window.location.reload(true);
     }
-        //ver sobre usar try catch:
-        // try {
-        //     api.delete(`/food/delete/${id}`).then(() => this.setState({ status: 'Sucessfully deleted' }));
 
-        //     alert("Post excluído com sucesso");
-        // } catch (error) {
-        //     console.log(error);
-        //     alert("Não foi possível excluir o post.")
-        // }
 
-        //melhorar/estilizar os alertas/pop-ups
+//melhorar/estilizar os alertas/pop-ups
     
     {
         return (
-            //map vai renderizar um container pra cada item no Array data
+ //map vai renderizar um container pra cada item no Array data
             data.map((data, key) => (
                 <Container key={key}>
                     <info>
@@ -77,11 +69,6 @@ const Card = ({ name, price, amount, description, timestamps }) => {
             ))
         )
     }
-
-
-
-
-
 
 
 }

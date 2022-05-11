@@ -5,6 +5,7 @@ import { Container } from "./style";
 import Card from '../../components/Cards';
 import Header from '../../components/Header';
 import Total from '../../components/Total';
+import MonthTotal from '../../components/MonthTotal';
 
 
 const Dashboard = () => {
