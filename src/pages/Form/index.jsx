@@ -57,6 +57,10 @@ const Form = () => {
       });
   }
 
+  function goBack () {
+    navigate('/')
+  }
+
   return (
     <>
       <Container>
@@ -80,10 +84,10 @@ const Form = () => {
             <input type="text" name="description" value={data.description} placeholder='' onChange={handleChange} />
           </label>
 
-          <button type="submit" value="Cadastrar">Cadastrar</button>
+          <button className='registerButton' type="submit" value="Cadastrar">Cadastrar</button>
 
         </form>
-        <button>Voltar</button> 
+        <button className='goBackButton' onClick={goBack}>Voltar</button> 
         {/* botao voltar para a pagina principal */}
       </Container>
     </>

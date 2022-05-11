@@ -22,5 +22,25 @@ export const Container = styled.div`
     text-align: center;
     font-weight: 600;
   }
-
+  .registerButton {
+    background-color: tomato;
+    border-radius: 4px;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .goBackButton {
+    background-color: #cfcdc8;
+    border-radius: 4px;
+    color: black;
+    text-align: center;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    width: 161px;
+  }
 `;

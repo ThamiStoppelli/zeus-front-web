@@ -37,6 +37,28 @@ const Card = ({ name, price, amount, description, timestamps }) => {
         }
     }
 
+    // function updatedModel (e: ChangeEvent<HTMLInputElement>) {
+
+    //     setModel({
+    //         ... model,
+    //         [e.target.name]: e.target.value
+    //     })
+    // }
+
+    // async function onSubmit (e: ChangeEvent<HTMLFormElement>) {
+    //     e.preventDefault()
+    //     if (id !== undefined) {
+    //       const response = await api.put(`/Item/${id}`, model)
+    //     } else {
+    //       const response = await api.post('/Item', model)
+    //     }
+    //     goBack()
+    // }
+  
+    // function goBack () {
+    //   navigate('/tasks')
+    // }
+
     //async function updateData(id){
     //api.put(`/food/update/${id}`)},
 
@@ -66,11 +88,11 @@ const Card = ({ name, price, amount, description, timestamps }) => {
                         <h3>Data: {moment(data.updatedAt).format('DD/MM/YYYY')} </h3>
                     </info>
                     <icons>
-                        <div class="button">
+                        <div className="button">
                             <PencilSimple size={32} onClick={() => editData(data._id)} />
                             {/* onClick={() => updateDate(data._id)} */}
                         </div>
-                        <div class="button">
+                        <div className="button">
                             <Trash size={32} onClick={() => deleteData(data._id)} />
                         </div>
                     </icons>

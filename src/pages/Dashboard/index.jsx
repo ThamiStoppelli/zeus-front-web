@@ -19,10 +19,11 @@ const Dashboard = () => {
       <Header />
       <h2>Lista de rações</h2>
       {/* <Link class="buttonAdd" to="/cadastrar">Cadastrar ração</Link> */}
-      <button class="buttonAdd" onClick={() => {navigate('/cadastrar')}}>Cadastrar ração</button> 
+      <button className="buttonAdd" onClick={() => {navigate('/cadastrar')}}>Cadastrar ração</button> 
 
       <div>
-        <Total/>
+        {/* <Total/> */}
+        <MonthTotal/>
         <lista> 
           <Card />
         </lista>
