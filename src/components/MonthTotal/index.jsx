@@ -3,57 +3,66 @@ import { Container } from './style.js';
 import api from '../../services/api';
 
 
-const Total = ({ totalPrice, totalAmount }) => {
+const Total = ({ totalMonthlyPrice, totalMonthlyAmount }) => {
 
-    const [amount, setAmount] = useState("")
+    const [amount, setAmount] = useState('')
     const [price, setPrice] = useState("")
-    const [year, setYear] = useState()
-    const [month, setMonth] = useState()
+    const [year, setYear] = useState("")
+    const [month, setMonth] = useState("")
 
-    useEffect(() => {
-        loadData();
-    }, [])
-
-    async function loadData() {
-        //definir valor selecionado como query para mes e ano
+    async function loadData(e, month, year) {
+        e.preventDefault();
+        e.stopPropagation();
         await api.get(`/food/totalMonthlyAmount?month=${month}&year=${year}`).then((response) => {
-            console.log(response)
-            setAmount(response.data.totalAmount)
-        }, (err) => {
-            console.log("erro", err)
+            console.log(response.data.totalMonthlyAmount)
+            setAmount(response.data.totalMonthlyAmount)
         })
-        await api.get('/food/totalMonthlyPrice').then((response) => {
-            setPrice(response.data.totalPrice)
+        await api.get(`/food/totalMonthlyPrice?month=${month}&year=${year}`).then((response) => {
+            setPrice(response.data.totalMonthlyPrice)
         })
     }
 
-    // function calcularTotal() {
-
+    // function handlePrice(e,month,year){
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     api.get(`/food/totalMonthlyAmount?month=${month}&year=${year}`).then((res)=>{
+    //         console.log(res.data.totalMonthlyAmount)
+    //         setAmount(res.data.totalMonthlyAmount)
+    //     }).catch((err)=>{
+    //         console.log(err)
+    //     })
     // }
 
     {
         return (
             <Container>
                 <div className="card">
-                    <form className="form" >
+                    <form className="form"  >
                         <label className="header">Calcular gastos mensais</label>
                         <div className="input">
                             <label>Mês:</label>
-                            <input type="number" name="month" value={month} placeholder='ex: 5' min="1" max="12" onChange={(field) => {setMonth(field.target.value)
-                            console.log(month)}} />
+                            <input type="number" name="month" value={month} placeholder='ex: 5' min="1" max="12" 
+                            onChange={(field) => {
+                                setMonth(field.target.value) 
+                                console.log(month)
+                                console.log(field)
+                            }} />
                         </div>
                         <div className="input">
                             <label>Ano:</label>
-                            <input type="number" name="year" value={year} placeholder='ex: 2022' min="2022" max="2040" onChange={(field) => setYear(field.target.value)} />
+                            <input type="number" name="year" value={year} placeholder='ex: 2022' min="2022" max="20222" onChange={(field) => {
+                                setYear(field.target.value)
+                                console.log(year)
+                                console.log(field)
+                            }} />
                         </div>
 
-                        <button onClick={() => loadData()}>
-                            {/* onClick={this.Calculate} */}
+                        <button onClick={(e) => {loadData(e, month, year)}}>
                             <h3>Calcular</h3>
                         </button>
                     </form>
 
-                    <h2>{ }</h2>
+                    {/* <h3>{month} de {year}</h3> */}
                     <div>
                         <span>
                             <h3>Quantidade mensal: </h3>

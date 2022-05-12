@@ -73,11 +73,11 @@ const Form = () => {
           </label>
           <label>
             Preço (R$):
-            <input type="number" name="price" value={data.price} placeholder='Preço em reais' onChange={handleChange} />
+            <input type="number" name="price" value={data.price} placeholder='Preço em reais' min="0.1" onChange={handleChange} />
           </label>
           <label>
             Quantidade (kg):
-            <input type="number" name="amount" value={data.amount} placeholder='Quantidade em quilogramas' onChange={handleChange} />
+            <input type="number" name="amount" value={data.amount} placeholder='Quantidade em quilogramas' min="0.1" onChange={handleChange} />
           </label>
           <label>
             Descrição:
