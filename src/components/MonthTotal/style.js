@@ -6,7 +6,7 @@ export const Container = styled.div`
   flex-direction:row;
   border: 1px solid black;
   width: 20vw;
-  height: 320px;
+  height: 385px;
   background-color: #cfcdc8;
   border-radius: 8px;
   align-items: center;
@@ -57,6 +57,16 @@ export const Container = styled.div`
   button {
     margin-top: 20px;
     margin-bottom: 10px;
+    background-color: tomato;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  button:hover {
+    cursor: pointer;
   }
   .header {
     margin-bottom: 20px;

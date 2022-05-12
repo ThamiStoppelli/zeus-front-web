@@ -12,6 +12,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   margin-right: 40px;
+
 //ver da posição do título "Zeus" mudando entre tela home e cadastrar
 
   #texto {

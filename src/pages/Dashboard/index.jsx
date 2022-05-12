@@ -14,23 +14,23 @@ const Dashboard = () => {
 
   
   return (
-    <Container>
-
+    <>
       <Header />
-      <h2>Lista de rações</h2>
-      {/* <Link class="buttonAdd" to="/cadastrar">Cadastrar ração</Link> */}
-      <button className="buttonAdd" onClick={() => {navigate('/cadastrar')}}>Cadastrar ração</button> 
+      <Container>
+        <section>
+          <h2>Lista de rações</h2>
+          <button className="buttonAdd" onClick={() => {navigate('/cadastrar')}}>Cadastrar ração</button> 
+        </section>
 
-      <div>
-        {/* <Total/> */}
-        <MonthTotal/>
-        <lista> 
-          <Card />
-        </lista>
-      </div>
-
-    </Container>
-
+        <div>
+          {/* <Total/> */}
+          <MonthTotal/>
+          <lista> 
+            <Card />
+          </lista>
+        </div>
+      </Container>
+    </>
   );
 }
 

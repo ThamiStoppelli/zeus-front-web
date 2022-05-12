@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   /* border: 1px solid black; */
+  margin-top: 26px;
   align-items: center;
   justify-content: center;
   display: flex;
@@ -9,9 +10,12 @@ export const Container = styled.div`
   gap: 16px;
   
   form {
+    margin-top: 10px;
+    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
     gap: 16px;
+    width: 16rem;
   }
   label {
     display: flex;
@@ -22,25 +26,35 @@ export const Container = styled.div`
     text-align: center;
     font-weight: 600;
   }
+
+  button {
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    width: 120px;
+    height: 30px;
+    margin-top: 20px;
+  }
+  button:hover {
+    cursor: pointer;
+  }
   .registerButton {
     background-color: tomato;
-    border-radius: 4px;
     color: white;
     text-align: center;
     display: inline-block;
-    font-size: 14px;
-    font-weight: bold;
-    text-decoration: none;
   }
   .goBackButton {
     background-color: #cfcdc8;
-    border-radius: 4px;
     color: black;
     text-align: center;
     display: inline-block;
-    font-size: 14px;
-    font-weight: bold;
-    text-decoration: none;
-    width: 161px;
   }
+  
+  div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
 `;

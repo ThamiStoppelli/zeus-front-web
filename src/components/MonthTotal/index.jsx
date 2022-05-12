@@ -3,35 +3,23 @@ import { Container } from './style.js';
 import api from '../../services/api';
 
 
-const Total = ({ totalMonthlyPrice, totalMonthlyAmount }) => {
+const Total = () => {
 
     const [amount, setAmount] = useState('')
     const [price, setPrice] = useState("")
     const [year, setYear] = useState("")
     const [month, setMonth] = useState("")
 
-    async function loadData(e, month, year) {
-        e.preventDefault();
-        e.stopPropagation();
+    async function loadData(event, month, year) {
+        event.preventDefault();
+        event.stopPropagation();
         await api.get(`/food/totalMonthlyAmount?month=${month}&year=${year}`).then((response) => {
-            console.log(response.data.totalMonthlyAmount)
             setAmount(response.data.totalMonthlyAmount)
         })
         await api.get(`/food/totalMonthlyPrice?month=${month}&year=${year}`).then((response) => {
             setPrice(response.data.totalMonthlyPrice)
         })
     }
-
-    // function handlePrice(e,month,year){
-    //     e.preventDefault();
-    //     e.stopPropagation();
-    //     api.get(`/food/totalMonthlyAmount?month=${month}&year=${year}`).then((res)=>{
-    //         console.log(res.data.totalMonthlyAmount)
-    //         setAmount(res.data.totalMonthlyAmount)
-    //     }).catch((err)=>{
-    //         console.log(err)
-    //     })
-    // }
 
     {
         return (
@@ -57,7 +45,7 @@ const Total = ({ totalMonthlyPrice, totalMonthlyAmount }) => {
                             }} />
                         </div>
 
-                        <button onClick={(e) => {loadData(e, month, year)}}>
+                        <button onClick={(event) => {loadData(event, month, year)}}>
                             <h3>Calcular</h3>
                         </button>
                     </form>

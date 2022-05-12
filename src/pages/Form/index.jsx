@@ -53,7 +53,7 @@ const Form = () => {
     })
       .catch(function (error) {
         alert("Preencha os campos obrigatórios para cadastrar");
-        console.log(error); // Network Error
+        console.log(error);
       });
   }
 
@@ -63,8 +63,8 @@ const Form = () => {
 
   return (
     <>
+      <Header />
       <Container>
-        <Header />
         <h2>{ formTitle }</h2>
         <form onSubmit={handleSubmit} >
           <label>
@@ -73,22 +73,23 @@ const Form = () => {
           </label>
           <label>
             Preço (R$):
-            <input type="number" name="price" value={data.price} placeholder='Preço em reais' min="0.1" onChange={handleChange} />
+            <input type="number" name="price" value={data.price} placeholder='Preço em reais' step="0.01" min="0.01" onChange={handleChange} />
           </label>
           <label>
             Quantidade (kg):
-            <input type="number" name="amount" value={data.amount} placeholder='Quantidade em quilogramas' min="0.1" onChange={handleChange} />
+            <input type="number" name="amount" value={data.amount} placeholder='Quantidade em quilogramas' step="0.1" min="0.1" onChange={handleChange} />
           </label>
           <label>
             Descrição:
             <input type="text" name="description" value={data.description} placeholder='' onChange={handleChange} />
           </label>
 
-          <button className='registerButton' type="submit" value="Cadastrar">Cadastrar</button>
+          <div>
+            <button className='goBackButton' onClick={goBack}>Voltar</button>
+            <button className='registerButton' type="submit" value="Cadastrar">Cadastrar</button>
+          </div>
 
-        </form>
-        <button className='goBackButton' onClick={goBack}>Voltar</button> 
-        {/* botao voltar para a pagina principal */}
+        </form> 
       </Container>
     </>
   );

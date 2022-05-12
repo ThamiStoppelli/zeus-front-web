@@ -6,7 +6,7 @@ import axios from "axios";
 import moment from 'moment';
 
 
-const Card = ({ name, price, amount, description, timestamps }) => {
+const Card = () => {
 
     const [data, setData] = useState([])
 

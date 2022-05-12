@@ -13,7 +13,8 @@ export const Container = styled.div`
   
   h3 {
     font-weight: 400;
-    width: 50vw;
+    width: 48.5vw;
+    word-break: break-all;
   }
 
   icons {

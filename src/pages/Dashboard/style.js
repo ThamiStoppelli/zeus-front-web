@@ -2,11 +2,22 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   /* border: 1px solid black; */
+  margin-top: 16px;
   align-items: center;
   justify-content: center;
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  section {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    margin-left: 20rem;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   h2 {
     /* font-size: 30px;
@@ -26,7 +37,6 @@ export const Container = styled.div`
     font-size: 16px;
     font-weight: bold;
     //margin-left: auto;
-    text-decoration: none;
     //border: none;
   }
 
