@@ -10,13 +10,13 @@ const Total = () => {
     const [year, setYear] = useState("")
     const [month, setMonth] = useState("")
 
-    async function loadData(event, month, year) {
+    function loadData(event, month, year) {
         event.preventDefault();
         event.stopPropagation();
-        await api.get(`/food/totalMonthlyAmount?month=${month}&year=${year}`).then((response) => {
+        api.get(`/food/totalMonthlyAmount?month=${month}&year=${year}`).then((response) => {
             setAmount(response.data.totalMonthlyAmount)
         })
-        await api.get(`/food/totalMonthlyPrice?month=${month}&year=${year}`).then((response) => {
+        api.get(`/food/totalMonthlyPrice?month=${month}&year=${year}`).then((response) => {
             setPrice(response.data.totalMonthlyPrice)
         })
     }

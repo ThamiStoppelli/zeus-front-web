@@ -17,24 +17,7 @@ const Form = () => {
   }
 
   const [data, setData] = useState(newData);
-  const [formTitle, setFormTitle] = useState("Cadastrar ração")
   const navigate = useNavigate()
-
-//colocar os dados nos campos dos inputs
-  // useEffect(() => {
-  //   if (id !== undefined) {
-  //     setFormTitle("Editar ração");
-      //mudar botão
-      //mudar feedback
-//     }
-// }, [])
-
-//verificacao
-  // function getData(name) {
-  //   setData(name.target.value)
-  //   console.log(name.target.value)
-  // }
-//<input onChange={event => setTitle(event.target.value)} />
 
 
   function handleChange(field) {
@@ -50,8 +33,7 @@ const Form = () => {
       setData(response.data)
       navigate('/')
       alert("Ração cadastrada com sucesso");
-    })
-      .catch(function (error) {
+    }).catch(function (error) {
         alert("Preencha os campos obrigatórios para cadastrar");
         console.log(error);
       });
@@ -65,7 +47,7 @@ const Form = () => {
     <>
       <Header />
       <Container>
-        <h2>{ formTitle }</h2>
+        <h2>Cadastrar ração</h2>
         <form onSubmit={handleSubmit} >
           <label>
             Marca da ração:
@@ -87,8 +69,7 @@ const Form = () => {
           <div>
             <button className='goBackButton' onClick={goBack}>Voltar</button>
             <button className='registerButton' type="submit" value="Cadastrar">Cadastrar</button>
-          </div>
-
+          </div> 
         </form> 
       </Container>
     </>

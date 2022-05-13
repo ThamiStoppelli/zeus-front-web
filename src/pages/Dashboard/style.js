@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   /* border: 1px solid black; */
-  margin-top: 16px;
+  margin-top: 26px;
   align-items: center;
   justify-content: center;
   display: flex;
@@ -15,7 +15,7 @@ export const Container = styled.div`
     flex-direction: row;
     width: 50%;
     margin-left: 20rem;
-    justify-content: space-between;
+    justify-content: right;
     align-items: center;
   }
 

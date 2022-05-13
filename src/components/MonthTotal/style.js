@@ -4,7 +4,7 @@ export const Container = styled.div`
   /* border: 1px solid black; */
   display: flex;
   flex-direction:row;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 20vw;
   height: 385px;
   background-color: #EFE6DD;
@@ -12,6 +12,8 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   margin-right: 40px;
+  /* box-shadow: 5px 5px lightgrey; */
+
 
   #texto {
     line-height: 32px;

@@ -16,8 +16,8 @@ const Dashboard = () => {
     <>
       <Header />
       <Container>
+      <h2>Lista de rações</h2>
         <section>
-          <h2>Lista de rações</h2>
           <button className="buttonAdd" onClick={() => {navigate('/cadastrar')}}>Cadastrar ração</button> 
         </section>
 
