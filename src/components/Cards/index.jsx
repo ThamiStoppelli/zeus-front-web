@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Container } from './style.js';
 import api from '../../services/api';
 import { Trash, PencilSimple } from "phosphor-react";
-import axios from "axios";
 import moment from 'moment';
 
 
@@ -75,31 +74,29 @@ const Card = () => {
     }
     //melhorar/estilizar os alertas/pop-ups
 
-    {
-        return (
-            //map vai renderizar um container pra cada item no Array data
-            data.map((data, key) => (
-                <Container key={key}>
-                    <info>
-                        <h3>Nome: {data.name} </h3>
-                        <h3>Preço: R$ {data.price} </h3>
-                        <h3>Quantidade: {data.amount} kg</h3 >
-                        <h3>Descrição: {data.description} </h3>
-                        <h3>Data: {moment(data.updatedAt).format('DD/MM/YYYY')} </h3>
-                    </info>
-                    <icons>
-                        <div className="button">
-                            <PencilSimple size={32} onClick={() => editData(data._id)} />
-                            {/* onClick={() => updateDate(data._id)} */}
-                        </div>
-                        <div className="button">
-                            <Trash size={32} onClick={() => deleteData(data._id)} />
-                        </div>
-                    </icons>
-                </Container>
-            ))
-        )
-    }
+    return (
+        //map vai renderizar um container pra cada item no Array data
+        data.map((data, key) => (
+            <Container key={key}>
+                <info>
+                    <h3>Nome: {data.name} </h3>
+                    <h3>Preço: R$ {data.price} </h3>
+                    <h3>Quantidade: {data.amount} kg</h3 >
+                    <h3>Descrição: {data.description} </h3>
+                    <h3>Data: {moment(data.updatedAt).format('DD/MM/YYYY')} </h3>
+                </info>
+                <icons>
+                    <div className="button">
+                        <PencilSimple size={32} onClick={() => editData(data._id)} />
+                        {/* onClick={() => updateDate(data._id)} */}
+                    </div>
+                    <div className="button">
+                        <Trash size={32} onClick={() => deleteData(data._id)} />
+                    </div>
+                </icons>
+            </Container>
+        ))
+    )
 
 
 }

@@ -7,12 +7,11 @@ export const Container = styled.div`
   border: 1px solid black;
   width: 20vw;
   height: 385px;
-  background-color: #cfcdc8;
+  background-color: #EFE6DD;
   border-radius: 8px;
   align-items: center;
   justify-content: center;
   margin-right: 40px;
-//ver da posição do título "Zeus" mudando entre tela home e cadastrar
 
   #texto {
     line-height: 32px;
@@ -37,12 +36,14 @@ export const Container = styled.div`
   .card {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
   .form {
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin-bottom: 20px;
+    align-items: center;
   }
   .input {
     display: flex;
@@ -51,7 +52,7 @@ export const Container = styled.div`
   }
   
   input {
-    width: 180px;
+    width: 8rem;
     height: 20px
   }
   button {
@@ -64,6 +65,8 @@ export const Container = styled.div`
     display: inline-block;
     font-size: 16px;
     font-weight: bold;
+    height: 40px;
+    width: 200px;
   }
   button:hover {
     cursor: pointer;

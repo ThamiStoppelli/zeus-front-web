@@ -45,7 +45,7 @@ export const Container = styled.div`
     display: inline-block;
   }
   .goBackButton {
-    background-color: #cfcdc8;
+    background-color: #EFE6DD;
     color: black;
     text-align: center;
     display: inline-block;

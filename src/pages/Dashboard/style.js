@@ -38,6 +38,7 @@ export const Container = styled.div`
     font-weight: bold;
     //margin-left: auto;
     //border: none;
+    width: 200px;
   }
 
   .buttonAdd:hover {

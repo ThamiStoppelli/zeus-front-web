@@ -6,7 +6,7 @@ export const Container = styled.div`
   border: 1px solid black;
   width: 50vw;
   height: 120px;
-  background-color: #cfcdc8;
+  background-color: #EFE6DD;
   border-radius: 8px;
   /* gap: 50px; */
   /* box-shadow: 0px 0px 15px -5px; */
